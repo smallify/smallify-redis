@@ -9,11 +9,11 @@ module.exports = function (smallify, options, done) {
 
   const { url, namespace, ...redisOptions } = opts
 
-  if (!smallify.hasDecorator('redis')) {
-    smallify.decorate('redis', {})
+  if (!smallify.hasDecorator('$redis')) {
+    smallify.decorate('$redis', {})
   }
 
-  const { redis } = smallify
+  const { $redis: redis } = smallify
   if (namespace in redis) {
     const e = new Error(`redis.${namespace} has already been registered`)
     return done(e)
