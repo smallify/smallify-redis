@@ -16,6 +16,6 @@ declare module 'smallify' {
   }
 
   interface Smallify {
-    redis: Redis
+    $redis: Redis
   }
 }
